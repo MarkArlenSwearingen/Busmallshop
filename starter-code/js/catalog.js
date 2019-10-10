@@ -41,7 +41,7 @@ function addSelectedItemToCart() {
   var quantity = number.value;
  for (var i = 0; i < Product.allProducts.length; i++){
    if (Product.allProducts[i].name === item){     
-    cart.addItem(new CartItem(Product.allProducts[i], number));
+    cart.addItem(new CartItem(Product.allProducts[i], quantity));
    }
  }
 
