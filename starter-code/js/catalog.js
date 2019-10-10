@@ -51,8 +51,8 @@ function addSelectedItemToCart() {
  //pass the Product object into the CartItem function.
  //pass the cartItem instance/object to the Cart function.
  for (var i = 0; i < Product.allProducts.length; i++){
-   if (Product.allProducts[i].name === item){
-    Cart(CartItem(Product.allProducts[i].name, number));
+   if (Product.allProducts[i].name === item){     
+    cart.addItem(new CartItem(Product.allProducts[i], number));
    }
  }
 
