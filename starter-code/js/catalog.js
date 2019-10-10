@@ -34,22 +34,11 @@ function handleSubmit(event) {
 }
 
 // TODO: Add the selected item and quantity to the cart
-function addSelectedItemToCart() {
-  
-  // TODO: suss out the item picked from the select list
+function addSelectedItemToCart() {  
   var list = document.getElementById('items');
-  var item = list.value;
-  console.log(item);
-  // TODO: get the quantity
+  var item = list.value;  
   var number = document.getElementById('quantity');
   var quantity = number.value;
-  console.log(quantity);
-  // TODO: using those, add one item to the Cart
-
- console.log(cart);
- //find the Product instance based upon the item
- //pass the Product object into the CartItem function.
- //pass the cartItem instance/object to the Cart function.
  for (var i = 0; i < Product.allProducts.length; i++){
    if (Product.allProducts[i].name === item){     
     cart.addItem(new CartItem(Product.allProducts[i], number));
