@@ -1,1 +1,43 @@
 /* TODO: Make it awesome */
+
+*{
+  color: #121b2e;
+  background-color: #cccf9e;
+  border: 1px red dotted;
+}
+
+body{
+  display: grid;  
+  grid-template-rows: auto auto auto;
+  gap: 10px;
+}
+
+header{
+  display: grid;
+  grid-template-rows: auto auto; 
+  justify-content: center; 
+}
+
+h1{
+  grid-row: 0;
+  font-size: 25px;
+}
+
+ul{
+  display: block;
+  list-style-type: none;
+  overflow: hidden;
+  justify-content: center;
+
+}
+
+li{
+  display: block;
+  float: left;
+  margin: auto;
+
+}
+
+a{
+  text-align: center;
+}
