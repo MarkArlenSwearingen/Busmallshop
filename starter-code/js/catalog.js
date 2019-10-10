@@ -39,6 +39,14 @@ function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
+
+  Product.allProducts.forEach(product => {
+    if(item === product){
+      var cartItem = new CartItem(Product, quantity);
+      Cart.addItem(cartItem);
+    }
+
+  })
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
@@ -46,7 +54,6 @@ function updateCounter() {
   var countElement = document.getElementById('itemCount');
   var itemCount = cart.items.length;
   countElement.innerHTML = itemCount;
-
 }
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
