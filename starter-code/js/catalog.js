@@ -24,7 +24,7 @@ function populateForm() {
 function handleSubmit(event) {
 
   // TODO: Prevent the page from reloading
-
+  event.preventDefault();
   // Do all the things ...
   addSelectedItemToCart();
   cart.saveToLocalStorage();
@@ -37,16 +37,26 @@ function handleSubmit(event) {
 function addSelectedItemToCart() {
   
   // TODO: suss out the item picked from the select list
+  var list = document.getElementById('items');
+  var item = list.value;
+  console.log(item);
   // TODO: get the quantity
+  var number = document.getElementById('quantity');
+  var quantity = number.value;
+  console.log(quantity);
   // TODO: using those, add one item to the Cart
 
-  Product.allProducts.forEach(product => {
-    if(item === product){
-      var cartItem = new CartItem(Product, quantity);
-      Cart.addItem(cartItem);
-    }
+ console.log(cart);
+ //find the Product instance based upon the item
+ //pass the Product object into the CartItem function.
+ //pass the cartItem instance/object to the Cart function.
+ for (var i = 0; i < Product.allProducts.length; i++){
+   if (Product.allProducts[i].name === item){
+    Cart(CartItem(Product.allProducts[i].name, number));
+   }
+ }
 
-  })
+
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
