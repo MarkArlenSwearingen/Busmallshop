@@ -20,7 +20,11 @@ header{
 
 h1{
   grid-row: 0;
-  font-size: 25px;
+  font-size: 50px;
+}
+
+li a {
+  margin: 20px;
 }
 
 ul{
@@ -28,16 +32,42 @@ ul{
   list-style-type: none;
   overflow: hidden;
   justify-content: center;
-
 }
 
 li{
   display: block;
   float: left;
   margin: auto;
+}
 
+ol li {
+  font-size: 180%;
+}
+
+fieldset {
+  width: 50%;
+  height: 50%;
+  font-size: 150%;
+  margin-left: 2%;
+  padding-top: 1%;
 }
 
 a{
   text-align: center;
+  font-size: 150%;
+  background-color: cornsilk;
+}
+
+a:hover{
+  background-color: cornflowerblue;
+}
+
+td, th{
+  color: black;
+  font-size: 100%;
+  padding: 10px;
+}
+
+input {
+  background-color: yellowgreen;
 }
