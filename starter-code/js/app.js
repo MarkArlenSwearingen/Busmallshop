@@ -21,11 +21,10 @@ Cart.prototype.saveToLocalStorage = function() {
   localStorage.setItem('cart', data);
 };
 
-Cart.prototype.removeItem = function(item) {  
-  if(this.items.includes(item)){
-    var index = this.items.indexOf(item);
-    this.items.splice(index, 1);
-  };
+Cart.prototype.removeItem = function(item) {   
+  var index = this.items.indexOf(item);
+  this.items.splice(index, 1);
+
 };
 
 var CartItem = function(product, quantity) {
@@ -67,21 +66,3 @@ function generateCatalog() {
 // Initialize the app by creating the big list of products with images and names
 generateCatalog();
 
-var items = [];
-var cart1 = new CartItem(Product.allProducts[2], 1);
-var cart2 = new CartItem(Product.allProducts[5], 4);
-var testCart = new Cart([cart1, cart2]);
-
-
-
-testCart.addItem(Product.allProducts[3], 6);
-
-console.log(testCart);
-
-testCart.removeItem(cart1);
-
-console.log(testCart);
-
-testCart.saveToLocalStorage();
-// loadCart();
-// showCart();

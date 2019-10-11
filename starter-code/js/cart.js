@@ -21,33 +21,40 @@ function renderCart() {
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 function clearCart() {
   var table = document.getElementById('cart');
+  while(table.hasChildNodes()) table.removeChild(table.lastChild);
 }
 
 
-function showCart() {  
+function showCart() {
   var table = document.getElementById('cart');
-    cart.items.forEach(cartItem => {
+
+  cart.items.forEach(cartItem => {
+
     var row = document.createElement('tr');
-    row.id = `${cartItem.product.name}Row`;
+    row.id = cartItem.product.product.name;
     var deleteD = document.createElement('td');
+    deleteD.id = 'delete';
     var quantity = document.createElement('td');
     var item = document.createElement('td');
-    quantity.innerHTML = cartItem.quantity;
-    item.innerHTML = cartItem.product.name;
+    quantity.innerHTML = cartItem.product.quantity;
+    item.innerHTML = cartItem.product.product.name;
     deleteD.innerHTML = 'X';
     row.appendChild(deleteD);
     row.appendChild(quantity);
     row.appendChild(item);
     table.appendChild(row);
-    });
+  });
 
 }
 
 function removeItemFromCart(event) {
-
-  // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
-  // TODO: Save the cart back to local storage
-  // TODO: Re-draw the cart table
+  if(event.target.id === 'delete'){
+    var id = event.target.parentNode.id;
+    cart.items.forEach((prod) => {
+      if(prod.product.product.name === id) {
+        cart.removeItem(prod.product.product);
+      }});
+  }
   clearCart();
   cart.saveToLocalStorage();
   renderCart();
