@@ -27,31 +27,30 @@ function clearCart() {
 
 function showCart() {
   var table = document.getElementById('cart');
-
-  cart.items.forEach(cartItem => {
-
-    var row = document.createElement('tr');
-    row.id = cartItem.product.product.name;
-    var deleteD = document.createElement('td');
-    deleteD.id = 'delete';
-    var quantity = document.createElement('td');
-    var item = document.createElement('td');
-    quantity.innerHTML = cartItem.product.quantity;
-    item.innerHTML = cartItem.product.product.name;
-    deleteD.innerHTML = 'X';
-    row.appendChild(deleteD);
-    row.appendChild(quantity);
-    row.appendChild(item);
-    table.appendChild(row);
-  });
-
+  if(cart.items.length > 0){
+    cart.items.forEach(cartItem => {
+      var row = document.createElement('tr');
+      row.id = cartItem.product.name;
+      var deleteD = document.createElement('td');
+      deleteD.id = 'delete';
+      var quantity = document.createElement('td');
+      var item = document.createElement('td');
+      quantity.innerHTML = cartItem.quantity;
+      item.innerHTML = cartItem.product.name;
+      deleteD.innerHTML = 'X';
+      row.appendChild(deleteD);
+      row.appendChild(quantity);
+      row.appendChild(item);
+      table.appendChild(row);
+    });
+  }
 }
 
 function removeItemFromCart(event) {
   if(event.target.id === 'delete'){
     var id = event.target.parentNode.id;
     cart.items.forEach((prod) => {
-      if(prod.product.product.name === id) {
+      if(prod.product.name === id) {
         cart.removeItem(prod.product.product);
       }});
   }
