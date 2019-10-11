@@ -38,13 +38,18 @@ function showCart() {
       quantity.innerHTML = cartItem.quantity;
       item.innerHTML = cartItem.product.name;
       deleteD.innerHTML = 'X';
+      var img = document.createElement('img');
+      img.src = cartItem.product.filePath;
       row.appendChild(deleteD);
+      row.appendChild(img);
       row.appendChild(quantity);
       row.appendChild(item);
       table.appendChild(row);
     });
   }
+
 }
+
 
 function removeItemFromCart(event) {
   if(event.target.id === 'delete'){
@@ -66,7 +71,7 @@ var orderForm = {
     this.assembleForm();
     var main = document.getElementsByTagName('main')[0];
     main.appendChild(this.form);
-  },  
+  },
   assembleInputLabel: function(label, inputType, content){
     var labelE = document.createElement('label');
     labelE.for = label;
