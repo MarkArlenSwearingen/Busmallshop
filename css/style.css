@@ -51,7 +51,7 @@ nav li {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2em;
-  margin: 5px;
+  margin: 3px;
 }
 
 footer {
@@ -64,13 +64,25 @@ img {
   height: 150px;
 }
 
-#delete,  input, label{
+#delete {
   /* clear: both; */
-  font-size: 1em;
+  font-size: 2em;
   text-align: left;
 }
 
 form input, form label{
   display: block;
   font-size: 1.2em;
+}
+
+#catalog fieldset span, #items {
+  font-size: 1.4em;
+}
+
+legend {
+  font-size: 2em;
+}
+.card li , .card td{
+  font-size: 1.2em;
+  padding: 5px;
 }
