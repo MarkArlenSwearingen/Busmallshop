@@ -1,73 +1,88 @@
 /* TODO: Make it awesome */
 
 *{
-  color: #121b2e;
-  background-color: #cccf9e;
+  box-sizing: border-box;
+  color: #2a3457;
+  background-color: #F2EAED;
   border: 1px red dotted;
 }
 
-body{
-  display: grid;  
-  grid-template-rows: auto auto auto;
-  gap: 10px;
-}
+/* color: #A4A4BF;
+color: 16235A;
+color: 888C46; */
 
-header{
-  display: grid;
-  grid-template-rows: auto auto; 
-  justify-content: center; 
-}
 
-h1{
-  grid-row: 0;
-  font-size: 50px;
-}
+.col-1{width: 33.33%}
+.col-2{width: 66.66%}
+.col-3{width: 100%}
+/* .col-4{width: 100%}  */
+/* .col-5{width: 41.66%}
+.col-6{width: 50%}
+.col-7{width: 58.33%}
+.col-8{width: 66.66%}
+.col-9{width: 75%}
+.col-10{width: 83.33%}
+.col-11{width: 91.66%}
+.col-12{width: 100%} */
 
-li a {
-  margin: 20px;
-}
-
-ul{
-  display: block;
-  list-style-type: none;
-  overflow: hidden;
-  justify-content: center;
-}
-
-li{
-  display: block;
+[class*="col-"] {
   float: left;
-  margin: auto;
+  padding: 15px;
+  border: 2px dashed darkblue;
 }
 
-ol li {
-  font-size: 180%;
-}
-
-fieldset {
-  width: 50%;
-  height: 50%;
-  font-size: 150%;
-  margin-left: 2%;
-  padding-top: 1%;
-}
-
-a{
+h1 {
   text-align: center;
-  font-size: 150%;
-  background-color: cornsilk;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 4em;
 }
 
-a:hover{
-  background-color: cornflowerblue;
+header h1{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
 }
 
-td, th{
-  color: black;
-  font-size: 100%;
-  padding: 10px;
+nav {
+  text-align: center;
+}
+nav li {
+  display: inline-block;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  margin: 3px;
 }
 
-input {
-  background-color: yellowgreen;
+footer {
+ clear: both;
+  border: 2px dotted lightseagreen;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+#delete {
+  /* clear: both; */
+  font-size: 2em;
+  text-align: left;
+}
+
+form input, form label{
+  display: block;
+  font-size: 1.2em;
+}
+
+#catalog fieldset span, #items {
+  font-size: 1.4em;
+}
+
+legend {
+  font-size: 2em;
+}
+.card li , .card td{
+  font-size: 1.2em;
+  padding: 5px;
 }
